@@ -1,27 +1,24 @@
 # VehiclesFrontend
+App strictly for learning purposes. 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+## Technology stack
+1. Angular 5 
+2. ...
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Development process
+### Repository
+1. `master` branch - release branch
+2. `develop` branch - every day development branch
+3. commit message must contain issue number, if issue exists in issue tracker
+4. commit message should describe what intention was behind this change rather than describing what was changed in code 
+5. all changes goes by merge request
+6. rebase working branch on `develop` branch before creating merge request
+7. Never mix new code changes with code reformat changes in the same branch (separate branch for reformat)
+### Code
+1. create unit test
+2. name test methods accordingly to tested functionality
+### Merge requests:
+1. Assign merge requests to reviewer when it's ready to be verified.
+2. If there are some fixes to be made reviewer will reassign merge request to orginal author.
+3. First respond to reviewer's question, later start fixing code.
+4. After finishing correcting code, reassign merge request to reviewer.
