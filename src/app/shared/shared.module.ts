@@ -1,10 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule }   from '@angular/forms';
+import { NewVehicleFormComponent } from '@app/shared/forms/new-vehicle-form/new-vehicle-form.component';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
+  ],  
+  providers: [
   ],
-  declarations: []
+  declarations: [
+    NewVehicleFormComponent
+  ],
+  exports: [
+    NewVehicleFormComponent
+  ]
 })
 export class SharedModule { }

@@ -1,0 +1,11 @@
+.is-number {
+	text-align: right !important;
+}
+
+td {
+	max-width: 650px
+}
+
+th {
+	text-align: center
+}
