@@ -28,8 +28,8 @@ export class VehiclesManagementComponent implements OnInit {
 
   loadVehiclesData() {
     this.vehiclesService.getVehicles().subscribe(response => {
-      response.forEach(element => {
-        this.vehicles.push(VehicleDto.toVehicleDto(element));
+      response.forEach(vehicle => {
+        this.vehicles.push(VehicleDto.from(vehicle));
       });
     });
   }

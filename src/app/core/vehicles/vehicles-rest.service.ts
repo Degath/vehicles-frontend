@@ -1,8 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { VehiclesService } from "@app/core/vehicles/vehicles.service";
 import { Injectable } from "@angular/core";
-import { Vehicle } from "@app/shared/models/vehicle";
-import { environment } from './../../../environments/environment';
+import { environment } from '@env/environment';
 import { Observable } from 'rxjs';
 import { VehicleDto } from '@app/shared/dtos/vehicle-dto';
 

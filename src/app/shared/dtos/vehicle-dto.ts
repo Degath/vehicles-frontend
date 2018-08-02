@@ -13,14 +13,9 @@ export class VehicleDto {
         public productionYear: number
     ) { }
 
-
-    public static toVehicleDto(entity: Vehicle) {
-        return new VehicleDto(entity.aggregateId, entity.manufacturer,entity.model,entity.capacity, entity.power, entity.transmission, entity.fleetId, entity.productionYear);
-    }
-
-    public static toVehicle(dto: VehicleDto){
-        return new Vehicle(dto.aggregateId, dto.manufacturer, dto.model, dto.capacity, dto.power, dto.transmission, dto.fleetId, dto.productionYear);
-    }
+    public static from(vehicle: Vehicle) {
+        return new VehicleDto(vehicle.aggregateId, vehicle.manufacturer, vehicle.model, vehicle.capacity, vehicle.power, vehicle.transmission, vehicle.fleetId, vehicle.productionYear);
+    }   
 }
 
 
