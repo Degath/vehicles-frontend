@@ -1,0 +1,4 @@
+.navbar-expand-md .navbar-collapse {
+    display: inline !important;
+    flex-basis: auto;
+}

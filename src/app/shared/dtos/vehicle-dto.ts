@@ -17,5 +17,3 @@ export class VehicleDto {
         return new VehicleDto(vehicle.aggregateId, vehicle.manufacturer, vehicle.model, vehicle.capacity, vehicle.power, vehicle.transmission, vehicle.fleetId, vehicle.productionYear);
     }   
 }
-
-

@@ -1,0 +1,17 @@
+button.ui-autocomplete-dropdown.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-icon-only,
+input.ui-inputtext.ui-widget.ui-state-default.ui-corner-all.ui-autocomplete-input {
+  height: 30px !important;
+}
+input.ui-inputtext.ui-widget.ui-state-default.ui-corner-all.ui-autocomplete-input {
+  width: 245px !important;
+}
+/* nie skonczone, wyswietlanie nie jest do konca poprawne - fieldsety powinny byc tej samej wielkosci,
+   a przciski powinny byc wyrownane do prawej strony (ale na szerokosci z fieldsetami) */
+#basic-informations, #engine-details {
+  display: inline-block;
+  height: auto;
+  width: auto;
+}
+.ui-overflow-hidden {
+  position: unset !important;
+}
