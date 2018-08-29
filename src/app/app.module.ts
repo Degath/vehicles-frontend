@@ -11,10 +11,12 @@ import { AccordionModule } from 'primeng/accordion';
 import { FeatureModule } from '@app/feature/feature.module';
 import { CoreModule } from '@app/core/core.module';
 import { SharedModule } from '@app/shared/shared.module';
+import { DashboardComponent } from '@app/feature/dashboard/dashboard.component';
 
 const appRoutes: Routes = [
   { path: 'vehicles', component: VehiclesManagementComponent },
-  { path: 'add-vehicle', component: NewVehicleComponent }
+  { path: 'add-vehicle', component: NewVehicleComponent },
+  { path: 'events', component: DashboardComponent }
 ];
 
 @NgModule({

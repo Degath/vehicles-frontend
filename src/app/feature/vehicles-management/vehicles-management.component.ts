@@ -10,19 +10,19 @@ import { VehicleDto } from '@app/shared/dtos/vehicle-dto';
 })
 export class VehiclesManagementComponent implements OnInit {
 
-  vehicles: Vehicle[] =[];
-  columns: any[];
-  
+  vehicles: Vehicle[] = [];
+  columns: any[] = [
+    { field: 'model', header: 'Model' },
+    { field: 'capacity', header: `Capacity` },
+    { field: 'power', header: `Power` },
+    { field: 'transmission', header: `Transmission` },
+    { field: 'productionYear', header: `Production Year` }
+  ];
 
-  constructor(private vehiclesService: VehiclesService) { }
+  constructor(private vehiclesService: VehiclesService) { 
+  }
+
   ngOnInit() {
-    this.columns = [
-      { field: 'model', header: 'Model' },
-      { field: 'capacity', header: `Capacity` },
-      { field: 'power', header: `Power` },
-      { field: 'transmission', header: `Transmission` },
-      { field: 'productionYear', header: `Production Year` }
-    ];
     this.loadVehiclesData();
   }
 

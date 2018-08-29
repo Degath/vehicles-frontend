@@ -5,6 +5,7 @@ import { NewVehicleComponent } from '@app/feature/new-vehicle/new-vehicle.compon
 import {TableModule} from 'primeng/table';
 import { SharedModule } from '@app/shared/shared.module';
 import { CoreModule } from '@app/core/core.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { CoreModule } from '@app/core/core.module';
   ],
   declarations: [
     VehiclesManagementComponent,
-    NewVehicleComponent
+    NewVehicleComponent,
+    DashboardComponent
   ],
 })
 export class FeatureModule { }
