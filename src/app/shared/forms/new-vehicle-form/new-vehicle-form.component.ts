@@ -47,7 +47,7 @@ export class NewVehicleFormComponent implements OnInit {
     this.filteredManufacturers = [];
     for (let i = 0; i < this.manufacturers.length; i++) {
       let manufacturer = this.manufacturers[i].name;
-      if (this.assertNieWiemJakNazwac(manufacturer, event)) {
+      if (this.propertyContainsValueFromEvent(manufacturer, event))  {
         this.filteredManufacturers.push(manufacturer);
       }
     }
@@ -55,10 +55,10 @@ export class NewVehicleFormComponent implements OnInit {
 
   filterModels(event) {
     this.filteredModels = [];
-    for (let manufacturerer of this.manufacturers) {
-      if (manufacturerer.name === this.vehicle.manufacturer) {
-        for (let model of manufacturerer.models) {
-          if (this.assertNieWiemJakNazwac(model, event)) {
+    for (let manufacturer of this.manufacturers) {
+      if (manufacturer.name === this.vehicle.manufacturer) {
+        for (let model of manufacturer.models) {
+          if (this.propertyContainsValueFromEvent(model, event)) {
             this.filteredModels.push(model);
           }
         }
@@ -66,9 +66,10 @@ export class NewVehicleFormComponent implements OnInit {
     }
   }
 
-  assertNieWiemJakNazwac(input, event) {
-    return (input.toLowerCase().indexOf(event.query.toLowerCase()) == 0);
+  propertyContainsValueFromEvent (input: string, event: any) {
+    return input.toLowerCase().includes(event.query.toLowerCase());
   }
+  
 
   onSubmit() {
     this.confirmationService.confirm({
