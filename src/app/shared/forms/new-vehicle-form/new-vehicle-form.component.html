@@ -1,1 +1,120 @@
-<p>new-vehicle-form</p>
+<div class="col-lg-12 pt-4">
+    <!-- Confirm dialog ma wplyw na navbar (podczas wyswietlenia confirm dialog navbar zmniejsza sie do elementow na stronie) -->
+    <p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle" width="580" responsive="false"></p-confirmDialog>
+    <p-toast [style]="{marginTop: '80px'}"></p-toast>
+        <!-- 
+            validation for fields
+            misc/blockUI if promise not success
+        -->
+    <h2>Add vehicle</h2>
+    <form  #vehicleForm="ngForm" (ngSubmit)="onSubmit()">
+        <div id="basic-informations" class="row ml-4">
+            <p-fieldset legend="Basic informations">
+                <div class="form-group">
+                    <h4>Manufacturer</h4>
+                    <p-autoComplete
+                        [(ngModel)]="vehicle.manufacturer" 
+                        name="manufacturer"
+                        [suggestions]="filteredManufacturers" 
+                        (completeMethod)="filterManufacturers($event)"
+                        [minLength]="1"
+                        placeholder="Hint: type manufacturer name"
+                        [dropdown]="true"
+                        required>
+                        <ng-template let-manufacturer pTemplate="item">
+                            {{manufacturer}}
+                        </ng-template>
+                    </p-autoComplete>
+                </div>
+                <div class="form-group">
+                    <!-- block panel if manufacturer undefined-->
+                    <h4>Model</h4>
+                    <p-autoComplete
+                        [(ngModel)]="vehicle.model" 
+                        name="model"
+                        [suggestions]="filteredModels" 
+                        (completeMethod)="filterModels($event)"
+                        [minLength]="1"
+                        placeholder="Hint: type model name"
+                        [dropdown]="true"
+                        required>
+                        <ng-template let-model pTemplate="item">
+                            {{model}}
+                        </ng-template>
+                    </p-autoComplete>
+                </div>
+                <div class="form-group">
+                    <h4>Production year</h4>
+                    <p-spinner 
+                        size="4"
+                        [(ngModel)]="vehicle.productionYear"
+                        name="productionYear"
+                        thousandSeparator=""
+                        [min]="1769"
+                        [max]="currentYear"
+                        required>
+                        <!-- Czy jest możliwosc dodania samochodu ktorego rok produkcji jest wiekszy niz aktualny? Jesli tak to o ile -->
+                    </p-spinner>
+                </div>
+            </p-fieldset>
+        </div>
+        <div id="engine-details" class="row ml-4">
+            <p-fieldset legend="Engine details">
+                <div class="form-group">
+                    <h4>Capacity</h4>
+                    <div class="ui-inputgroup">
+                        <input 
+                            [size]="30"
+                            [(ngModel)]="vehicle.capacity"
+                            name="capacity"
+                            type="numeric"
+                            pInputText
+                            placeholder="Hint: type value (e.g. 2000)"
+                            required>
+                        <span class="ui-inputgroup-addon">cm3</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <h4>Power</h4>
+                    <p-spinner 
+                        size="3"
+                        [(ngModel)]="vehicle.power"
+                        name="power"
+                        thousandSeparator=""
+                        [min]="0"
+                        [max]="500"
+                        required>
+                    </p-spinner>
+                </div>
+                <div class="form-group">
+                    <h4>Transmission</h4>
+                    <p-dropdown 
+                        size=40
+                        [options]="transmissions"
+                        [(ngModel)]="vehicle.transmission"
+                        name="transmission"
+                        placeholder="Select transmission"
+                        [showClear]="true"
+                        required>
+                    </p-dropdown>
+                </div>
+            </p-fieldset>
+        </div>
+        <div class="row ml-4 pt-4">
+            <div id="buttons" class="form-group">
+                <button pButton
+                        type="button"
+                        label="Clear form"
+                        class="ui-button-secondary"
+                        (click)="clearForm()">
+                </button>
+                <button pButton
+                        [disabled]="!vehicleForm.form.valid"
+                        type="submit"
+                        label="Add vehicle"
+                        class="ui-button-success">
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

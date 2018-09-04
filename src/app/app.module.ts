@@ -11,6 +11,7 @@ import { AccordionModule } from 'primeng/accordion';
 import { FeatureModule } from '@app/feature/feature.module';
 import { CoreModule } from '@app/core/core.module';
 import { SharedModule } from '@app/shared/shared.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const appRoutes: Routes = [
   { path: 'vehicles', component: VehiclesManagementComponent },
@@ -23,16 +24,17 @@ const appRoutes: Routes = [
 
   ],
   imports: [
+    AccordionModule,
+    BrowserModule,
+    BrowserAnimationsModule,
     CoreModule,
     FeatureModule,
-    SharedModule,
-    AccordionModule,
     FormsModule,
-    BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(
       appRoutes
-    )
+    ),
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

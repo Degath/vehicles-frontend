@@ -17,6 +17,7 @@ export class VehiclesManagementComponent implements OnInit {
   constructor(private vehiclesService: VehiclesService) { }
   ngOnInit() {
     this.columns = [
+      { field: 'manufacturer', header: 'Manufacturer' },
       { field: 'model', header: 'Model' },
       { field: 'capacity', header: `Capacity` },
       { field: 'power', header: `Power` },
