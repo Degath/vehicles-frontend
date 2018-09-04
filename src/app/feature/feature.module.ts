@@ -8,7 +8,7 @@ import { CoreModule } from '@app/core/core.module';
 import { VehicleDetailComponent } from './vehicle-detail/vehicle-detail.component';
 import { RouterModule } from '@angular/router';
 import { FleetListComponent } from './fleet-list/fleet-list.component';
-
+import {InputTextModule} from 'primeng/inputtext';
 
 @NgModule({
   imports: [
@@ -16,14 +16,15 @@ import { FleetListComponent } from './fleet-list/fleet-list.component';
     CoreModule,
     RouterModule,
     SharedModule,
-    TableModule
+    TableModule,
+    InputTextModule
   ],
   providers: [
   ],
   declarations: [
     VehicleListComponent,
     NewVehicleComponent,
-    VehiclesManagementComponent,
+    VehicleDetailComponent,
     FleetListComponent,
     VehicleDetailComponent
   ],
