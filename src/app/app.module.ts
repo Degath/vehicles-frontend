@@ -13,11 +13,13 @@ import { CoreModule } from '@app/core/core.module';
 import { SharedModule } from '@app/shared/shared.module';
 import { VehicleDetailComponent } from '@app/feature/vehicle-detail/vehicle-detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FleetListComponent } from '@app/feature/fleet-list/fleet-list.component';
 
 const appRoutes: Routes = [
   { path: 'vehicles', component: VehicleListComponent },
   { path: 'add-vehicle', component: NewVehicleComponent },
-  { path: 'vehicles/:id', component: VehicleDetailComponent }
+  { path: 'vehicles/:id', component: VehicleDetailComponent },
+  { path: 'fleets', component: FleetListComponent }
 ];
 
 @NgModule({
