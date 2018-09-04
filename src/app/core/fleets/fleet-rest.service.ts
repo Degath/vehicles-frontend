@@ -15,4 +15,7 @@ export class FleetRestService implements FleetService {
         return this.http.get<FleetDto[]>(environment.api + '/fleets');
     }
 
+    public addFleet(fleetDto: FleetDto): Observable<FleetDto> {
+        return this.http.post<FleetDto>(environment.api + '/fleets', fleetDto);
+      }
 }

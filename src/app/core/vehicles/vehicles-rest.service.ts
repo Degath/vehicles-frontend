@@ -9,8 +9,6 @@ import { VehicleDto } from '@app/shared/dtos/vehicle-dto';
 @Injectable()
 export class VehiclesRestService implements VehiclesService {
 
-  vehicleDto: VehicleDto;
-
   public constructor(private http: HttpClient) {
   }
 

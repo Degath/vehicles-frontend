@@ -5,20 +5,29 @@ import { VehiclesService } from '@app/core/vehicles/vehicles.service';
 import { VehiclesRestService } from '@app/core/vehicles/vehicles-rest.service';
 import { TableModule } from 'primeng/table';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterModule, Routes } from '@angular/router';
+import { VehicleDetailComponent } from '@app/feature/vehicle-detail/vehicle-detail.component';
 
-describe('VehiclesManagementComponent', () => {
+const appRoutes: Routes = [
+  { path: 'vehicles/:id', component: VehicleDetailComponent },
+  ];
+  
+describe('VehicleListComponent', () => {
   let component: VehicleListComponent;
   let fixture: ComponentFixture<VehicleListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ VehicleListComponent ],
+      declarations: [ VehicleListComponent, VehicleDetailComponent ],
       providers: [
         { provide: VehiclesService, useClass: VehiclesRestService }
       ],
       imports: [
         TableModule,
-        HttpClientTestingModule
+        HttpClientTestingModule,
+        RouterModule.forRoot(
+          appRoutes
+        ),
       ]
     })
     .compileComponents();
