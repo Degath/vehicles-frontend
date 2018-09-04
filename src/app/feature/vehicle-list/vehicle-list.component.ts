@@ -4,17 +4,19 @@ import { VehiclesService } from '@app/core/vehicles/vehicles.service';
 import { VehicleDto } from '@app/shared/dtos/vehicle-dto';
 
 @Component({
-  selector: 'app-vehicles-management',
-  templateUrl: './vehicles-management.component.html',
-  styleUrls: ['./vehicles-management.component.css']
+  selector: 'app-vehicle-list',
+  templateUrl: './vehicle-list.component.html',
+  styleUrls: ['./vehicle-list.component.css']
 })
-export class VehiclesManagementComponent implements OnInit {
+export class VehicleListComponent implements OnInit {
 
   vehicles: Vehicle[] =[];
+  selectedVehicleDto: VehicleDto;
   columns: any[];
-  
+
 
   constructor(private vehiclesService: VehiclesService) { }
+
   ngOnInit() {
     this.columns = [
       { field: 'manufacturer', header: 'Manufacturer' },
@@ -34,4 +36,6 @@ export class VehiclesManagementComponent implements OnInit {
       });
     });
   }
+
+
 }
