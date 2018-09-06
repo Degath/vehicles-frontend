@@ -7,6 +7,7 @@ import { SharedModule } from '@app/shared/shared.module';
 import { CoreModule } from '@app/core/core.module';
 import { VehicleDetailComponent } from './vehicle-detail/vehicle-detail.component';
 import { RouterModule } from '@angular/router';
+import { FleetListComponent } from './fleet-list/fleet-list.component';
 
 
 @NgModule({
@@ -22,6 +23,8 @@ import { RouterModule } from '@angular/router';
   declarations: [
     VehicleListComponent,
     NewVehicleComponent,
+    VehiclesManagementComponent,
+    FleetListComponent,
     VehicleDetailComponent
   ],
 })
