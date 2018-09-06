@@ -1,0 +1,21 @@
+<div class="col-lg-12 pt-4">
+  <p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle" width="580" responsive="false"></p-confirmDialog>
+  <p-toast [style]="{marginTop: '80px'}"></p-toast>
+  <h2>Add fleet</h2>
+  <form #fleetForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="row ml-4 pt-4">
+      <div class="form-group">
+        <h4>Name</h4>
+        <input id="input" type="text" size="30" pInputText [(ngModel)]="fleet.name" name="name" required>
+      </div>
+    </div>
+    <div class="row ml-4 pt-4">
+      <div id="buttons" class="form-group">
+        <button pButton type="button" label="Clear form" class="ui-button-secondary" (click)="clearForm()">
+        </button>
+        <button pButton [disabled]="!fleetForm.form.valid" type="submit" label="Add fleet" class="ui-button-success">
+        </button>
+      </div>
+    </div>
+</form>
+</div>

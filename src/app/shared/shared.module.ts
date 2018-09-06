@@ -11,6 +11,7 @@ import {FieldsetModule} from 'primeng/fieldset';
 import {ButtonModule} from 'primeng/button';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {ConfirmationService, MessageService} from 'primeng/api';
+import { NewFleetComponent } from './forms/new-fleet/new-fleet.component';
 
 @NgModule({
   imports: [
@@ -30,7 +31,8 @@ import {ConfirmationService, MessageService} from 'primeng/api';
     MessageService
   ],
   declarations: [
-    NewVehicleFormComponent
+    NewVehicleFormComponent,
+    NewFleetComponent
   ],
   exports: [
     NewVehicleFormComponent

@@ -6,4 +6,6 @@ import { Fleet } from '@app/shared/models/fleet';
 export abstract class FleetService {
 
   public getFleets: () => Observable<Fleet[]>;
+
+  public addFleet: (fleet: Fleet) => Observable<Fleet>;
 }
