@@ -1,0 +1,22 @@
+<div class="col-lg-12 pt-4">
+  <h2>Vehicle details</h2>
+  <div *ngIf="selectedVehicleDto;else vehicleDoesNotExist" class="mt-4">
+    <p><b>Capacity:</b> {{selectedVehicleDto.capacity}}</p>
+    <p><b>Power:</b> {{selectedVehicleDto.power}}</p>
+    <p><b>Production year:</b> {{selectedVehicleDto.productionYear}}</p>
+    <p><b>Manufacturer:</b> {{selectedVehicleDto.manufacturer}}</p>
+    <p><b>Model:</b> {{selectedVehicleDto.model}}</p>
+    <p><b>Transmission:</b> {{selectedVehicleDto.transmission}}</p>
+  </div>
+  <ng-template #vehicleDoesNotExist>
+    <p>Vehicle does not exist. </p>
+  </ng-template>
+  <button
+    pButton
+    type="button"
+    label="Return"
+    class="ui-button-secondary"
+    [routerLink]="['/vehicles']">
+    Return
+  </button>
+</div>

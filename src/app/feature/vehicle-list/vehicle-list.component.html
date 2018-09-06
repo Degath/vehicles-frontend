@@ -6,7 +6,8 @@
       [columns]="columns"
       [value]="vehicles"
       [paginator]="true"
-      [rows]="10">
+      [rows]="10"
+      selectionMode="single">
       <ng-template 
         pTemplate="header"
         let-columns>
@@ -30,7 +31,8 @@
         <tr>
           <td 
             *ngFor="let column of columns"
-            [ngClass]="vehicle[column.field] >=0  ? 'is-number' : null">
+            [ngClass]="vehicle[column.field] >=0  ? 'is-number' : null"
+            [routerLink]="['/vehicles', vehicle.aggregateId]">
             {{vehicle[column.field]}}
           </td>
         </tr>

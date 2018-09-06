@@ -7,6 +7,8 @@ export abstract class VehiclesService {
 
   public getVehicles: () => Observable<Vehicle[]>;
 
+  public getVehicle: (vehicleId: string) => Observable<Vehicle>;
+
   public addVehicle: (vehicle: Vehicle) => Observable<Vehicle>;
 
 }

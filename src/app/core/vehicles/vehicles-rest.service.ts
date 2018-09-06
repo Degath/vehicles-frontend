@@ -15,11 +15,15 @@ export class VehiclesRestService implements VehiclesService {
   }
 
   public getVehicles(): Observable<VehicleDto[]> {
-    return this.http.get<VehicleDto[]>(environment.api + '/vehicles');
+    return this.http.get<VehicleDto[]>(`${environment.api}/vehicles`);
+  }
+
+  public getVehicle(vehicleId: string): Observable<VehicleDto> {
+    return this.http.get<VehicleDto>(`${environment.api}/vehicles/${vehicleId}`);
   }
 
   public addVehicle(vehicleDto: VehicleDto): Observable<VehicleDto> {
-    return this.http.post<VehicleDto>(environment.api + '/vehicles', vehicleDto);
+    return this.http.post<VehicleDto>(`${environment.api}/vehicles`, vehicleDto);
   }
 
 }
